@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexão PE Solidária</title>
+    <link rel="stylesheet" href="src/styles/style-register.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/Conexao-PE-Compaixao/favicon_io/site.webmanifest">
+</head>
+<body>
+    <section class="register">
+        <div class="frame-register"></div>
+        <div class="register-content">
+            <h1>Crie sua conta</h1>
+            <div class="btn-switch-content">
+                <button id="btn-fisico" class="border-class">Cadastre-se em nosso sistema!</button>
+            </div>
+            <div class="all-forms">
+                <div class="form-content" id="form-fisico">
+                    <div class="formulario" id="appCep">
+                <form action="./add-event.html">
+                    <input type="text" name="" id="nome" placeholder="Nome completo">
+                    <input type="text" name="" id="data" placeholder="Data de nascimento">
+                    <input type="email" name="" id="email" placeholder="Email">
+                    <input type="text" name="" id="cpf" placeholder="CPF/CNPJ">
+                    <input type="password" name="" id="senha" placeholder="Senha">
+                    <input type="text" name="" id="confirmar-senha" placeholder="Confirmar senha">
+                    <input type="text" name="" id="cep" placeholder="CEP" v-model="endereco.cep" @change="cepAlteradoEvento" class="form-control">
+                    <input type="text" name="" id="bairro" placeholder="Bairro" v-model="endereco.bairro" class="form-control">
+                    <input type="text" name="" id="endereco" placeholder="Endereço" v-model="endereco.logradouro" class="form-control">
+                    <input type="text" name="" id="cidade" placeholder="Cidade" v-model="endereco.cidade" class="form-control">
+                    <input type="text" name="" id="numero" placeholder="N°" class="form-control">
+                    <input type="text" name="" id="complemento" placeholder="Complemento">
+                    <input type="tel" name="" id="telefone" placeholder="Telefone">
+                    <input type="tel" name="" id="celular" placeholder="Celular">
+                    <input type="submit" value="Registrar">
+                </form>
+            </div>
+            </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="src/js/script-register.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./src/js/script-search-cep.js"></script>
+</html>
