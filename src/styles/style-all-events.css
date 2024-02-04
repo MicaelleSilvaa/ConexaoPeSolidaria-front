@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --main-color: #D77317;
+  --btn-color-main: #3E3CAE;
+  --btn-color-hover: #211F97;
+  --color-white: #F6F6F6;
+  --color-black: #191919;
+}
+
+body{
+  background-color: var(--color-white);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-black);
+}
+nav {
+    background-color: var(--main-color);
+    overflow: hidden;
+    padding: 16px 8px;
+}
+.nav-content{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  float: right;
+  gap: 32px;
+}
+.nav-content a{
+    float: right;
+    display: block;
+    color: var(--color-white);
+    text-align: center;
+    text-decoration: none;
+}
+.nav-content a:hover{
+  color: var(--btn-color-hover);
+}
+.nav-content button{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border: none;
+  background-color: var(--btn-color-main);
+  color: var(--color-white);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+  cursor: pointer;
+  padding: 16px 8px;
+}
+.nav-content button:hover{
+  background-color: var(--btn-color-hover);
+}
+.nav-content i{
+  color: var(--color-white);
+  font-size: 24px;
+}
+
+
+.block-events{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 48px;
+    margin: 16px 0;
+
+  }
+  .card-event{
+    width: 100%; 
+    max-width: 300px; 
+    margin: 0 auto;
+    text-align: center;
+    background-color: #E4E4E4;
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+  .card-event h2{
+    font-size: 24px;
+  }
+  .card-event button{
+    margin-top: 9px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--main-color);
+    color: var(--color-white);
+    padding: 16px 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .card-event button:hover{
+    background-color: #ce6d12;
+  }
+.all-events-content{
+    text-align: center;
+    margin-top: 32px;
+}
