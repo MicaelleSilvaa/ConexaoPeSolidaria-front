@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexão PE Solidária</title>
+    <link rel="stylesheet" href="src/styles/style-event.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/Conexao-PE-Compaixao/favicon_io/site.webmanifest">
+</head>
+<body onload="loadSingleEvent()">
+    <nav>
+        <img src="src/img/logo.png" alt="">
+        <div class="nav-content">
+            <a href="./index.html">Inicio</a>
+            <a href="./add-event.html">Crie um evento</a>
+            <a href="./login.html">Seja um voluntário</a>
+            <a href="#about">Quem somos</a>
+            <button onclick="window.location.href = './login.html'"><i class="fa-solid fa-user"></i>Minha conta</button>
+        </div>
+    </nav>
+    <section class="description-event">
+        <h1>Seja voluntário deste evento</h1>
+        <div class="content-event">
+            <div class="img-event">
+                <img id="picture" src="src/img/about-carousel-1.png" alt="">
+            </div>
+            <div class="text-event">
+                <div class="event-tittle">
+                    <h3>Título do evento</h3>
+                    <p id="title"></p>
+                </div>
+                <div class="paragraphy-event">
+                    <h3>Descrição do evento</h3>
+                    <p id="description"></p>
+                </div>
+                <div class="data-event">
+                    <h3>Data do evento</h3>
+                    <p id="date"></p>
+                </div>
+                <div class="endress-event">
+                    <h3>Endereço</h3>
+                    <p id="address"></p>
+                </div>
+                <button>Indisponível</button>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="https://kit.fontawesome.com/bff9cdb54b.js" crossorigin="anonymous"></script>
+<script src="./src/js/event-load.js"></script>
+</html>
