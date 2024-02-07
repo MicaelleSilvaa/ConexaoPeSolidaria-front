@@ -1,56 +1,44 @@
-let btnFisico = document.getElementById('btn-fisico');
-
-let formFisico = document.getElementById('form-fisico');
-
-document.getElementById("telefone").addEventListener("input", function (event) {
-  let input = event.target;
-  let value = input.value.replace(/\D/g, "");
-
-  if (value.length > 10) {
-    input.value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(
-      7,
-      11
-    )}`;
-  } else {
-    input.value = `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(
-      6,
-      10
-    )}`;
+function logSubmit(event) {
+  const data = {
+    fullname: event.target['fullname'].value,
+    email: event.target['email'].value,
+    password: event.target['password'].value,
+    document: event.target['document'].value,
+    phone: event.target['phone'].value,
+    address: {
+      street: event.target['street'].value,
+      number: event.target['number'].value,
+      complement: event.target['complement'].value,
+      neighborhood: event.target['neighborhood'].value,
+      city: event.target['city'].value,
+      state: "PE",
+      postalCode: event.target['postalCode'].value
+    }
   }
-});
+  fetch('http://localhost:3000/user', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  }).then(e => e.json()).then(console.log);
+  event.preventDefault();
+}
 
-document.getElementById("celular").addEventListener("input", function (event) {
-  let input = event.target;
-  let value = input.value.replace(/\D/g, "");
-
-  if (value.length > 10) {
-    input.value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(
-      7,
-      11
-    )}`;
-  } else {
-    input.value = `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(
-      6,
-      10
-    )}`;
+function changeRepeatPassword(event) {
+  let fieldPassword = document.getElementById('password');
+  let fieldRepeatPassword = document.getElementById('passwordRepeat');
+  if (fieldPassword.value !== fieldRepeatPassword.value) {
+    fieldPassword.style.borderColor = '#D77317';
+    fieldRepeatPassword.style.borderColor = '#D77317';
+    fieldPassword.style.borderWidth = '3px';
+    fieldRepeatPassword.style.borderWidth = '3px';
+    setTimeout(() => { 
+      fieldPassword.style.borderColor = '#C6C6C6'; 
+      fieldRepeatPassword.style.borderColor = '#C6C6C6'; 
+      fieldPassword.style.borderWidth = '1px';
+      fieldRepeatPassword.style.borderWidth = '1px';
+    }, 3000);
   }
-});
-
-document.getElementById('cpf').addEventListener('input', function(event) {
-      let input = event.target;
-      let value = input.value.replace(/\D/g, ''); 
-
-      if (value.length > 9) {
-      
-        input.value = `${value.slice(0, 3)}.${value.slice(3, 6)}.${value.slice(6, 9)}-${value.slice(9, 11)}`;
-      } else if (value.length > 6) {
-        
-        input.value = `${value.slice(0, 3)}.${value.slice(3, 6)}.${value.slice(6, 9)}`;
-      } else if (value.length > 3) {
-        
-        input.value = `${value.slice(0, 3)}.${value.slice(3, 6)}`;
-      } else {
-       
-        input.value = value.slice(0, 3);
-      }
-    });
+}

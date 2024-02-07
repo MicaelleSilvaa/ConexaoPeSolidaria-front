@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/Conexao-PE-Compaixao/favicon_io/site.webmanifest">
 </head>
-<body>
+<body onload="loadSingleEvent()">
     <nav>
         <img src="src/img/logo.png" alt="">
         <div class="nav-content">
@@ -25,24 +25,24 @@
         <h1>Seja voluntário deste evento</h1>
         <div class="content-event">
             <div class="img-event">
-                <img src="src/img/about-carousel-1.png" alt="">
+                <img id="picture" src="src/img/about-carousel-1.png" alt="">
             </div>
             <div class="text-event">
                 <div class="event-tittle">
                     <h3>Título do evento</h3>
-                    <p>Doação de comida</p>
+                    <p id="title"></p>
                 </div>
                 <div class="paragraphy-event">
                     <h3>Descrição do evento</h3>
-                    <p>O evento "Doação de Comida" tem como objetivo proporcionar assistência alimentar a comunidades em situação de vulnerabilidade. Nosso compromisso é distribuir alimentos essenciais para promover o bem-estar e aliviar as necessidades alimentares urgentes.</p>
+                    <p id="description"></p>
                 </div>
                 <div class="data-event">
                     <h3>Data do evento</h3>
-                    <p>05/05/2024</p>
+                    <p id="date"></p>
                 </div>
                 <div class="endress-event">
                     <h3>Endereço</h3>
-                    <p>Praça do Diário - Santo Antônio, Recife - PE, 50010-290</p>
+                    <p id="address"></p>
                 </div>
                 <button>Indisponível</button>
             </div>
@@ -50,4 +50,5 @@
     </section>
 </body>
 <script src="https://kit.fontawesome.com/bff9cdb54b.js" crossorigin="anonymous"></script>
+<script src="./src/js/event-load.js"></script>
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/Conexao-PE-Compaixao/favicon_io/site.webmanifest">
 </head>
+
 <body>
     <section class="register">
         <div class="frame-register"></div>
@@ -21,25 +23,28 @@
             <div class="all-forms">
                 <div class="form-content" id="form-fisico">
                     <div class="formulario" id="appCep">
-                <form action="./add-event.html">
-                    <input type="text" name="" id="nome" placeholder="Nome completo">
-                    <input type="text" name="" id="data" placeholder="Data de nascimento">
-                    <input type="email" name="" id="email" placeholder="Email">
-                    <input type="text" name="" id="cpf" placeholder="CPF/CNPJ">
-                    <input type="password" name="" id="senha" placeholder="Senha">
-                    <input type="text" name="" id="confirmar-senha" placeholder="Confirmar senha">
-                    <input type="text" name="" id="cep" placeholder="CEP" v-model="endereco.cep" @change="cepAlteradoEvento" class="form-control">
-                    <input type="text" name="" id="bairro" placeholder="Bairro" v-model="endereco.bairro" class="form-control">
-                    <input type="text" name="" id="endereco" placeholder="Endereço" v-model="endereco.logradouro" class="form-control">
-                    <input type="text" name="" id="cidade" placeholder="Cidade" v-model="endereco.cidade" class="form-control">
-                    <input type="text" name="" id="numero" placeholder="N°" class="form-control">
-                    <input type="text" name="" id="complemento" placeholder="Complemento">
-                    <input type="tel" name="" id="telefone" placeholder="Telefone">
-                    <input type="tel" name="" id="celular" placeholder="Celular">
-                    <input type="submit" value="Registrar">
-                </form>
-            </div>
-            </div>
+                        <form id="form" onsubmit="logSubmit(event)">
+                            <input type="text" name="fullname" id="nome" placeholder="Nome completo">
+                            <!-- <input type="text" name="date" id="data" placeholder="Data de nascimento"> -->
+                            <input type="email" name="email" id="email" placeholder="Email">
+                            <input type="text" name="document" id="cpf" placeholder="CPF/CNPJ">
+                            <input type="password" name="password" id="password" placeholder="Senha" onchange="changeRepeatPassword(event)">
+                            <input type="password" id="passwordRepeat" placeholder="Repita a senha" onchange="changeRepeatPassword(event)">
+                            <input type="text" name="postalCode" id="cep" placeholder="CEP" v-model="endereco.cep"
+                                @change="cepAlteradoEvento" class="form-control">
+                            <input type="text" name="neighborhood" id="bairro" placeholder="Bairro"
+                                v-model="endereco.bairro" class="form-control" disabled>
+                            <input type="text" name="street" id="endereco" placeholder="Endereço"
+                                v-model="endereco.logradouro" class="form-control" disabled>
+                            <input type="text" name="city" id="cidade" placeholder="Cidade" v-model="endereco.cidade"
+                                class="form-control" disabled>
+                            <input type="text" name="number" id="numero" placeholder="N°" class="form-control">
+                            <input type="text" name="complement" id="complemento" placeholder="Complemento">
+                            <input type="tel" name="phone" id="contato" placeholder="Contato">
+                            <button type="submit">Registrar</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -49,4 +54,5 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="./src/js/script-search-cep.js"></script>
+
 </html>

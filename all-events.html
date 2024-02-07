@@ -10,9 +10,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/Conexao-PE-Compaixao/favicon_io/site.webmanifest">
 </head>
-<body>
+<body onload="loadAllEvent()">
     <nav>
-        <img src="src/img/logo.png" alt="">
+        <img src="src/img/logo.png" alt="" onclick="window.location.href = './index.html'">
         <div class="nav-content">
             <a href="./index.html">Inicio</a>
             <a href="./add-event.html">Crie um evento</a>
@@ -23,45 +23,10 @@
     </nav>
     <section class="all-events-content">
         <h1>Todos os eventos</h1>
-        <div class="block-events">
-            <div class="card-event">
-                <img src="src/img/exemple-event-img.png" alt="">
-                <h2>Nome do evento</h2>
-                <p>Junte-se a camapnha de doação de comida para pessoas carentes do Recife.</p>
-                <button onclick="window.location.href = './login.html'">Seja voluntário</button>
-            </div>
-            <div class="card-event">
-                <img src="src/img/exemple-event-img.png" alt="">
-                <h2>Nome do evento</h2>
-                <p>Junte-se a camapnha de doação de comida para pessoas carentes do Recife.</p>
-                <button onclick="window.location.href = './login.html'">Seja voluntário</button>
-            </div>
-            <div class="card-event">
-                <img src="src/img/exemple-event-img.png" alt="">
-                <h2>Nome do evento</h2>
-                <p>Junte-se a camapnha de doação de comida para pessoas carentes do Recife.</p>
-                <button onclick="window.location.href = './login.html'">Seja voluntário</button>
-            </div>
-            <div class="card-event">
-                <img src="src/img/exemple-event-img.png" alt="">
-                <h2>Nome do evento</h2>
-                <p>Junte-se a camapnha de doação de comida para pessoas carentes do Recife.</p>
-                <button onclick="window.location.href = './login.html'">Seja voluntário</button>
-            </div>
-            <div class="card-event">
-                <img src="src/img/exemple-event-img.png" alt="">
-                <h2>Nome do evento</h2>
-                <p>Junte-se a camapnha de doação de comida para pessoas carentes do Recife.</p>
-                <button onclick="window.location.href = './login.html'">Seja voluntário</button>
-            </div>
-            <div class="card-event">
-                <img src="src/img/exemple-event-img.png" alt="">
-                <h2>Nome do evento</h2>
-                <p>Junte-se a camapnha de doação de comida para pessoas carentes do Recife.</p>
-                <button onclick="window.location.href = './login.html'">Seja voluntário</button>
-            </div>
+        <div class="block-events" id="block-events">
         </div>
     </section>
 </body>
 <script src="https://kit.fontawesome.com/bff9cdb54b.js" crossorigin="anonymous"></script>
+<script src="./src/js/event-load.js"></script>
 </html>
