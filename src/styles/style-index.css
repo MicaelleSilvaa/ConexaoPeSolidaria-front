@@ -118,29 +118,7 @@ nav {
   grid-template-rows: repeat(2, 1fr);
   row-gap: 48px;
 }
-.card-event{
-  width: 100%; 
-  max-width: 300px; 
-  margin: 0 auto;
-  text-align: center;
-  background-color: #E4E4E4;
-  padding: 24px 0;
-  border-radius: 16px;
-}
-.card-event h2{
-  font-size: 24px;
-}
-.card-event button{
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  background-color: var(--main-color);
-  color: var(--color-white);
-  padding: 16px 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+
 .btn-content{
   display: flex;
   justify-content: center;

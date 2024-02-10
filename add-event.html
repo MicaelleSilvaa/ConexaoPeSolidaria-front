@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,46 +11,60 @@
     <link rel="manifest" href="/Conexao-PE-Compaixao/favicon_io/site.webmanifest">
     <title>Conexão PE Solidária</title>
 </head>
-<body>
+
+<body onload="loginChecked()">
     <nav>
         <img src="src/img/logo.png" alt="">
         <div class="nav-content">
             <a href="./index.html">Inicio</a>
             <a href="./add-event.html">Crie um evento</a>
-            <a href="./login.html">Seja um voluntário</a>
+            <a href="./all-events.html">Seja um voluntário</a>
             <a href="#about">Quem somos</a>
             <button onclick="window.location.href = './login.html'"><i class="fa-solid fa-user"></i>Minha conta</button>
         </div>
     </nav>
     <div class="formulario" id="appCep">
-    <section class="add-event-content">
-        <h1>Adicionar novo evento</h1>
-        <form action="./event.html">
-            <input type="text" placeholder="Título do evento">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Descrição do evento"></textarea>
-            <input type="tel" name="" id="telefone" placeholder="Telefone">
-            <input type="tel" name="" id="celular" placeholder="Celular">
-            <input type="date" name="" id="" placeholder="Data do evento">
-            <h2>Endereço do evento</h2>
-            <div class="double-inputs">
-                <input type="text" name="" id="cep" placeholder="CEP" v-model="endereco.cep" @change="cepAlteradoEvento" class="form-control">
-                <input type="text" name="" id="" placeholder="Rua"  v-model="endereco.logradouro" class="form-control">
-            </div>
-            <div class="double-inputs">
-                <input type="text" name="" id="" placeholder="Número">
-                <input type="text" name="" id="" placeholder="Complementos">
-            </div>
-            <input type="text" name="" id="" placeholder="Bairro" v-model="endereco.bairro" class="form-control">
-            <input type="text" name="" id="" placeholder="Cidade" v-model="endereco.cidade" class="form-control">
-            <input type="submit" value="Adicionar evento">
-        </form>
-    </section>
-</div>
+        <aside class="notification" id="notification">
+       
+        </aside>
+        <section class="add-event-content">
+            <h1>Adicionar novo evento</h1>
+            <form onsubmit="handleCreate(event)">
+                <input type="text" name="title" placeholder="Título do evento">
+                <textarea name="" id="description" cols="30" rows="10" placeholder="Descrição do evento"></textarea>
+                <input type="tel" name="contact" id="contact" placeholder="Contato"
+                    pattern="\([0-9]{2}\)[\s][0-9]{5}-[0-9]{4}">
+                <input type="url" name="picture" id="picture" placeholder="URL da imagem" pattern="^(http|https):\/\/.*">
+                <input type="datetime-local" name="date" id="date" placeholder="Data do evento">
+                <h2>Endereço do evento</h2>
+                <div class="double-inputs">
+                    <input type="text" name="postalCode" id="postalCode" placeholder="CEP" v-model="endereco.cep"
+                        @change="cepAlteradoEvento" class="form-control">
+                    <input type="text" name="street" id="street" disabled placeholder="Rua" v-model="endereco.logradouro"
+                        class="form-control">
+                </div>
+                <div class="double-inputs">
+                    <input type="number" name="number" id="number" min="0" value="1" placeholder="Número">
+                    <input type="text" name="complement" id="complement" placeholder="Complementos">
+                </div>
+                <input type="text" name="neighborhood" id="neighborhood" placeholder="Bairro" disabled v-model="endereco.bairro" class="form-control">
+                <input type="text" name="city" id="city" placeholder="Cidade" disabled v-model="endereco.cidade" class="form-control">
+                <input type="submit" value="Adicionar evento">
+            </form>
+        </section>
+    </div>
 </body>
 <script src="https://kit.fontawesome.com/bff9cdb54b.js" crossorigin="anonymous"></script>
-<script src="src/js/script-add-event.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="./src/js/script-search-cep.js"></script>
+<script src="./src/component/alert/alert.component.js"></script>
+<script src="./src/js/loginHandle.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script type="text/javascript">
+    $("#contact").mask("(00) 90000-0000");
+    $("#postalCode").mask("00000-000");
+</script>
+
 </html>

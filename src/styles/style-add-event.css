@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-:root{
+:root {
   --main-color: #D77317;
   --btn-color-main: #3E3CAE;
   --btn-color-hover: #211F97;
@@ -8,39 +8,45 @@
   --color-black: #191919;
 }
 
-body{
+body {
   background-color: var(--color-white);
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    color: var(--color-black);
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-black);
+  box-sizing: border-box;
 }
+
 nav {
-    background-color: var(--main-color);
-    overflow: hidden;
-    padding: 16px 8px;
+  background-color: var(--main-color);
+  overflow: hidden;
+  padding: 16px 8px;
 }
-.nav-content{
+
+.nav-content {
   justify-content: center;
   align-items: center;
   display: flex;
   float: right;
   gap: 32px;
 }
-.nav-content a{
-    float: right;
-    display: block;
-    color: var(--color-white);
-    text-align: center;
-    text-decoration: none;
+
+.nav-content a {
+  float: right;
+  display: block;
+  color: var(--color-white);
+  text-align: center;
+  text-decoration: none;
 }
-.nav-content a:hover{
+
+.nav-content a:hover {
   color: var(--btn-color-hover);
 }
-.nav-content button{
+
+.nav-content button {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   border: none;
@@ -54,59 +60,85 @@ nav {
   cursor: pointer;
   padding: 16px 8px;
 }
-.nav-content button:hover{
+
+.nav-content button:hover {
   background-color: var(--btn-color-hover);
 }
-.nav-content i{
+
+.nav-content i {
   color: var(--color-white);
   font-size: 24px;
 }
 
-.add-event-content{
-    margin-top: 32px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+.add-event-content {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
-form{
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    padding: 24px 112px;
-    gap: 16px;
-    border-radius: 16px;
-    margin: 32px 0;
+form {
+  width: 100vw;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 112px;
+  gap: 16px;
+  border-radius: 16px;
+  /* margin: 32px 0; */
 }
-.double-inputs{
-    display: flex;
-    gap: 16px;
+
+.double-inputs {
+  display: flex;
+  gap: 16px;
 }
-.double-inputs input{
-    width: 100%;
+
+.notification{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-form input[type= "text"],[type= "tel"],[type= "date"]{
-    height: 40px;
-    background-color: #FAF8F2;
-    border: 1px solid #E6DBCA;
-    border-radius: 8px;
+
+textarea,
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+input[type="datetime-local"] {
+  width: 100%;
+  min-width: 300px;
+  padding: 0px 16px;
+  min-height: 40px;
+  border: 1px solid #C6C6C6;
+  border-radius: 8px;
 }
-form input[type="submit"]{
-    height: 40px;
-    border-radius: 8px;
-    border: none;
-    font-weight: 600;
-    color: var(--color-white);
-    background-color: var(--btn-color-main);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.double-inputs input {
+  width: 100%;
+  min-width: 150px;
 }
-form input[type="submit"]:hover{
-    background-color: var(--btn-color-hover);
+
+form input[type="submit"] {
+  height: 40px;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  color: var(--color-white);
+  background-color: var(--btn-color-main);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-textarea{
-  background-color: #FAF8F2;
-  border: 1px solid #E6DBCA;
+
+form input[type="submit"]:hover {
+  background-color: var(--btn-color-hover);
+}
+
+textarea {
+  resize: none;
+  padding: 16px 16px;
 }

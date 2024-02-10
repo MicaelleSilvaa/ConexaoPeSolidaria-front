@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,23 +9,34 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="/Conexao-PE-Compaixao/favicon_io/site.webmanifest">
+    <link rel="manifest" href="./favicon_io/site.webmanifest">
 </head>
-<body>
+
+<body onload="loginChecked()">
+    <aside class="notification" id="notification">
+       
+    </aside>
+
     <section class="login">
         <div class="frame-login"></div>
         <div class="login-content">
             <h1>Entre com sua conta</h1>
-            <div class="input-content">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Senha">
-            </div>
-            <div class="bnt-content">
-                <button class="btn-login">Login</button>
-                <button class="btn-register" onclick="window.location.href = './register.html'">Não tem uma conta? Cadastre-se</button>
-            </div>
+            <form onsubmit="handleLogin(event)">
+                <div class="input-content" id="input-content">
+                    <input type="email" name="email" placeholder="Email">
+                    <input type="password" name="password" placeholder="Senha">
+                </div>
+                <div class="bnt-content">
+                    <button class="btn-login" id="button_login">Login</button>
+                </div>
+            </form>
+            <button class="btn-register" onclick="window.location.href = './register.html'">Não tem uma conta?
+                Cadastre-se</button>
         </div>
     </section>
 </body>
+<script src="./src/component/loading/loading.component.js"></script>
+<script src="./src/component/alert/alert.component.js"></script>
+<script src="./src/js/loginHandle.js"></script>
 
 </html>
