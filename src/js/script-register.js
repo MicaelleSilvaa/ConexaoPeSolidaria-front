@@ -15,7 +15,7 @@ function logSubmit(event) {
       postalCode: event.target['postalCode'].value
     }
   }
-  fetch('http://localhost:3000/user', {
+  fetch('https://conexao-pe-back-end.vercel.app/user', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
